@@ -5,17 +5,29 @@ import java.util.Scanner;
 public class Rock_Paper_Scissor {
     public static void main(String[] args) {
 
-        Random rn = new Random();
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter The following \n0 -- for Rock\n1 -- for Paper\n2 -- Scissor");
+        int userInput = sc.nextInt();
 
-        int guess = rn.nextInt(3);
-        System.out.println("Enter The following \n0 -- for Rock\n1 -- for Scissor\n2 -- Paper");
-        int user = sc.nextInt();
-        if(guess == user){
-        System.out.println("Its a Draw!");
+        Random rn = new Random();
+        int computerInput = rn.nextInt(3);
+
+            if (userInput == computerInput) {
+                System.out.println("Draw!");
+            } else if (userInput == 0 && computerInput == 1 || userInput == 1 && computerInput == 2 || userInput == 2 && computerInput == 0) {
+                System.out.println("Computer Win!");
+            } else {
+                System.out.println("You Win!");
+            }
+            if (computerInput == 0) {
+                System.out.println("Computer Choice Rock");
+            }
+            if (computerInput == 1) {
+                System.out.println("Computer Choice Paper");
+            }
+            if (computerInput == 2) {
+                System.out.println("Computer Choice Scissor");
+            }
         }
-        else {
-            System.out.println("Still Working");
-        }
+
     }
-}
